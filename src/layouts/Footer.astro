@@ -1,0 +1,26 @@
+---
+interface Props {
+  dir1: Array<string>;
+  dir2: Array<string>;
+}
+const { dir1, dir2 } = Astro.props;
+---
+
+<footer>
+  <a href={dir1[0]}>{dir1[1]}</a>
+  <a href={dir2[0]}>{dir2[1]}</a>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-bottom: 36px;
+    padding-top: 36px;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-top-color: var(--border-color);
+  }
+</style>

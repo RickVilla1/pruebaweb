@@ -1,32 +1,16 @@
 ---
-import Footer from '../layouts/Footer.astro';
-import Layout from '../layouts/Layout.astro';
+import BannerView from "../components/BannerView.astro";
+import LinksVentas from "../components/LinksSeo/LinksVentas.astro";
+import Footer from "../layouts/Footer.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Index">
-	<div id="ParentView">
-			<span>Bienvenido, encuentre lo que desea: </span
-			>
-            <a onclick="RouteManager.NavigateTo(Euros)">Pastillas abortivas precio<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Pastillas abortivas precio Perú<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Precio de la pastilla abortiva<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Pastilla para abortar Perú precio<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Pastilla abortiva Cytotec precio<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Pastilla abortiva precio Perú<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">¿Cuál es el precio de la pastilla abortiva? </a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Pastilla para abortar Cytotec precio<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Pastilla para aborto humano precio<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Pastillas abortivas Mercado Libre<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Pastillas abortivas nombres y precios Perú<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Pastillas abortivas para perros MercadoLibre<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Pastillas para abortar en farmacias precio<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Pastillas para el aborto precio<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Precio de pastilla abortiva Perú<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Precio de pastillas abortivas en Perú<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Tomé pastillas abortivas y no me baja<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">Tomé pastillas abortivas y sangré poco<span>. </span></a>
-                    <a onclick="RouteManager.NavigateTo(Euros)">¿Es peligroso las pastillas abortivas?<span>. </span></a>
-	</div>
-	<Footer dir1={["/inicio","Inicio"]} dir2={["/blog","Más información"]}></Footer>
+<Layout initRoute="/ventas" title="Ventas">
+  <BannerView image="/images/DemoBanner.jpg" text="Sección de Ventas" />
+  <div id="ParentView">
+      <span>Bienvenido, encuentre lo que desea: </span>
+      <br /><br />
+      <LinksVentas />
+  </div>
+  <Footer dir1={["/", "Inicio"]} dir2={["/blog", "Más información"]} />
 </Layout>
-

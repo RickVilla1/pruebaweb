@@ -1,0 +1,58 @@
+.titleView {
+  font-size: larger;
+  font-style: normal;
+  font-family: helvetica, geneva, arial, sans-serif;
+}
+
+#ParentView {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#ParentView span {
+  font-family: helvetica, geneva, arial, sans-serif;
+  font-size: 30px;
+  line-height: 34px;
+  letter-spacing: -1px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Estilos para todos los enlaces <a */
+#ParentView a {
+  display: inline-block;
+  color: #555555; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */
+  width: fit-content;
+  font-family: helvetica, geneva, arial, sans-serif;
+  font-size: 30px;
+  line-height: 34px;
+  letter-spacing: -1px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.1s ease-in-out;
+}
+
+#ParentView a:hover {
+  color: #070707;
+  text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+#ParentView a:active {
+}
+
+#ParentView img {
+  display: block;
+  width: 500px;
+  height: 200px;
+  max-width: 100%;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  border-radius: 10px;
+  user-select: none;
+}
+
+

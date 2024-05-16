@@ -6,21 +6,122 @@ interface Props {
 const { dir1, dir2 } = Astro.props;
 ---
 
+<div class="header-footer-divider"></div>
 <footer>
-  <a href={dir1[0]}>{dir1[1]}</a>
-  <a href={dir2[0]}>{dir2[1]}</a>
+  <div class="btn-footer"><a href={dir1[0]}><span>{dir1[1]}</span></a></div>
+  <div class="divider"></div>
+  <div class="btn-footer"><a href={dir2[0]}><span>{dir2[1]}</span></a></div>
 </footer>
 
 <style>
   footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
     margin-left: 40px;
     margin-right: 40px;
-    padding-bottom: 36px;
-    padding-top: 36px;
-    border-top-style: solid;
-    border-top-width: 2px;
-    border-top-color: var(--border-color);
+    flex-wrap: wrap;
+  }
+  .divider {
+    height: 50px;
+    width: 2px;
+    opacity: 0.6;
+    background-color: #9b9b9b;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 2px 0px rgb(0, 0, 0);
+  }
+
+  .btn-footer {
+    width: 240px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.25s ease-in-out;
+  }
+
+  .btn-footer:hover {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .btn-footer a {
+    width: 240px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #010100c0;
+    border-radius: 5px;
+    padding: 15px;
+    color: #555555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .btn-footer a:hover {
+    color: #000;
+    border: 2px solid #444444;
+  }
+
+  .btn-footer span {
+    position: relative;
+    /* z-index coz when we put bg to before and after this span text will not be visible */
+    z-index: 3;
+    font-weight: 600;
+  }
+
+  .btn-footer a::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -2px;
+    width: calc(100% + 6px);
+    /*100% plus double the times left values*/
+    height: calc(100% - 10px);
+    background-color: #ffffff;
+    transition: all 0.25s ease-in-out;
+    transform: scaleY(1.1);
+  }
+
+  .btn-footer a:hover::before {
+    transform: scaleY(0);
+  }
+
+  .btn-footer a::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: -5px;
+    width: calc(100% - 10px);
+    /*100% plus double the times left values*/
+    height: calc(100% + 10px);
+    background-color: #ffffff;
+    transition: all 0.25s ease-in-out;
+    transform: scaleX(1.1);
+  }
+
+  .btn-footer a:hover::after {
+    transform: scaleX(0);
+  }
+
+  @media (max-width: 700px) {
+    footer {
+      flex-direction: column;
+    }
+    .divider {
+      height: 2px;
+      width: 50px;
+    }
+    .btn-footer{
+      height: 120px;
+    }
+    .btn-footer:hover {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
   }
 </style>

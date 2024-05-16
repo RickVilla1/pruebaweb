@@ -1,0 +1,21 @@
+---
+import BannerView from "../components/BannerView.astro";
+import LinksIndex3 from "../components/LinksSeo/LinksIndex3.astro";
+import Footer from "../layouts/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout initRoute="/" title="Inicio">
+  <div id="LayoutView">
+    <BannerView
+      image="/images/DemoBanner.jpg"
+      text="Bienvenido a Sobre Ellas"
+    />
+    <div id="ParentView">
+        <span>Encuentre lo que desea: </span>
+		<br><br>
+        <LinksIndex3 />
+    </div>
+  </div>
+  <Footer dir1={["/ventas", "Comprar"]} dir2={["/blog", "Más información"]} />
+</Layout>

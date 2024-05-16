@@ -3,11 +3,11 @@ import Header from './Header.astro';
 
 interface Props {
 	title: string;
+	initRoute: string;
 }
 
 const { title } = Astro.props;
 import '../css/app.css'
-
 ---
 
 <!doctype html>
@@ -21,7 +21,11 @@ import '../css/app.css'
 		<title>{title}</title>
 	</head>
 	<body>
-		<Header></Header>
-		<slot />
+		<Header class="animate__animated animate__fadeInDown"></Header>
+		<div class="animate__animated animate__fadeInDownBig" id="ContentView"><div><slot/></div></div>
 	</body>
+	<script is:inline type="module" src="/js/app.js"></script>
+	<script type="module">
+		ManagerHistory.pushState({initRoute});
+	</script>
 </html>

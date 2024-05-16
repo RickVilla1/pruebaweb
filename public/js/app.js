@@ -1,0 +1,7 @@
+import './views/Inicio.js'
+import './views/Dolares.js'
+import './views/DolaresPrecioDia.js'
+import './views/Euros.js'
+import './views/EurosPrecioDia.js'
+import './core/RouteManager.js'
+import './core/Debug.js'

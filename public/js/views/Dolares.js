@@ -1,10 +1,8 @@
 class Dolares {
     static buildView() {
-        const newContentView = /*html*/ `<div id="ParentView"> <div
-        class="font-extrabold flex justify-center m-5"
-    >
-        Operar con dólares
-    </div>
+        const newContentView = /*html*/ `<div id="ParentView"> 
+        <span>Operar con dólares:</span>
+        <br>
     <div>
         <span>¿Qué desea conocer? </span><a onclick="RouteManager.NavigateTo(DolaresPrecioDia)">Precio del día</a
         ><span> o </span><a>Cambio del Mes</a>

@@ -1,31 +1,53 @@
 ---
-import Header from './Header.astro';
+import Header from "./Header.astro";
 
 interface Props {
-	title: string;
-	initRoute: string;
+  link1: string[];
+  link2: string[];
+  title: string;
+  initRouteView: string;
 }
 
-const { title } = Astro.props;
-import '../css/app.css'
+const { link1, link2, title, initRouteView } = Astro.props;
+import "../css/app.css";
+import Footer from "./Footer.astro";
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header class="animate__animated animate__fadeInDown"></Header>
-		<div class="animate__animated animate__fadeInDownBig" id="ContentView"><div><slot/></div></div>
-	</body>
-	<script is:inline type="module" src="/js/app.js"></script>
-	<script type="module">
-		ManagerHistory.pushState({initRoute});
-	</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+	<meta name="robots" content="noindex">
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header class="animate__animated animate__fadeInDown" />
+    <div class="animate__animated animate__fadeInDownBig" id="ContentView">
+      <div><slot /></div>
+    </div>
+    <Footer dir1={link1} dir2={link2} />
+  </body>
+  <script is:inline type="module" src="/js/app.js"></script>
+  <script is:inline type="module">
+    const pathname = window.location.pathname.replace(/\//g, '');;
+    var className;
+    switch (pathname) {
+      case "":
+        className = 'Inicio'
+        break;
+      case "blog":
+        className = 'Blog'
+        break;
+      case "ventas":
+        className = 'Ventas'
+        break;
+    }
+
+	window[className].ViewPrerender = document.getElementById("LayoutView").parentElement.innerHTML;
+	ManagerHistory.pushState(className);
+  </script>
 </html>

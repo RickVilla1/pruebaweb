@@ -18,7 +18,7 @@ import { Animator } from "./Animator.js"
         console.log(currentContentView)
         console.log(classView)
 
-        const newContentViewObject =  (typeof classView === 'string') ? window[classView].buildView() :classView.buildView()
+        const newContentViewObject = (typeof classView === 'string') ? window[classView].buildView() :classView.buildView()
 
         Animator.setOutElementAnimation(currentContentView)
         Animator.setInElementAnimation(newContentViewObject)
@@ -28,7 +28,9 @@ import { Animator } from "./Animator.js"
                 newContentViewObject.style.opacity = '0'
                 newContentViewObject.style.transform = 'translateX(-20px)'
                 RouteManager.ContentApp.innerHTML = ''
-                RouteManager.ContentApp.append(newContentViewObject)
+                const divContainer = document.createElement('div')
+                divContainer.append(newContentViewObject)
+                RouteManager.ContentApp.append(divContainer)
                 newContentViewObject.style.opacity = '1'
                 newContentViewObject.style.transform = 'translateX(0px)';
                 if (history) {

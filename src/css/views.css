@@ -6,9 +6,7 @@
 
 #ParentView {
   margin: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  
 }
 
 #ParentView span {
@@ -22,7 +20,7 @@
 
 /* Estilos para todos los enlaces <a */
 #ParentView a {
-  display: inline-block;
+  display: inline;
   color: #555555; /* Color del texto */
   text-decoration: none; /* Sin subrayado */
   width: fit-content;
@@ -50,9 +48,25 @@
   height: 200px;
   max-width: 100%;
   margin-bottom: 30px;
-  margin-top: 5px;
+  margin-top: 8px;
   border-radius: 10px;
   user-select: none;
+}
+
+@media (max-width: 700px) {
+
+  #ParentView span {
+    font-size: 24px;
+  }
+  
+  #ParentView a {
+    font-size: 24px;
+  }
+
+  #ParentView a {
+    text-decoration: underline; /* Sin subrayado */
+  }
+  
 }
 
 

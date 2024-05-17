@@ -5,12 +5,18 @@ import Footer from "../layouts/Footer.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout initRoute="/blog" title="Blog">
+<Layout
+  initRouteView="Blog"
+  title="Blog"
+  link1={["/", "Inicio"]}
+  link2={["/ventas", "Comprar"]}
+>
+  <div id="LayoutView">
     <BannerView image="/images/DemoBanner.jpg" text="Sección de Blog" />
     <div id="ParentView">
       <span>Bienvenido, encuentre lo que desea: </span>
       <br /><br />
       <LinksBlog />
     </div>
-  <Footer dir1={["/", "Inicio"]} dir2={["/ventas", "Comprar"]} />
+  </div>
 </Layout>

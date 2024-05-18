@@ -25,8 +25,8 @@ import Footer from "./Footer.astro";
     <title>{title}</title>
   </head>
   <body>
-    <Header class="animate__animated animate__fadeInDown" />
-    <div class="animate__animated animate__fadeInDownBig" id="ContentView">
+    <Header/>
+    <div class="animate__animated animate__fadeIn" id="ContentView">
       <div><slot /></div>
     </div>
     <Footer dir1={link1} dir2={link2} />

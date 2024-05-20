@@ -11,13 +11,14 @@ interface Props {
 const { link1, link2, title, initRouteView } = Astro.props;
 import "../css/app.css";
 import Footer from "./Footer.astro";
+import Footer2 from "./Footer2.astro";
+import Header2 from "./Header2.astro";
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	<meta name="robots" content="noindex">
@@ -25,11 +26,11 @@ import Footer from "./Footer.astro";
     <title>{title}</title>
   </head>
   <body>
-    <Header/>
-    <div class="animate__animated animate__fadeIn" id="ContentView">
+    <Header2/>
+    <div class="animate__animated animate__fadeIn transform-gpu" id="ContentView">
       <div><slot /></div>
     </div>
-    <Footer dir1={link1} dir2={link2} />
+    <Footer2 dir1={link1} dir2={link2} />
   </body>
   <script is:inline type="module" src="/js/app.js"></script>
   <script is:inline type="module">

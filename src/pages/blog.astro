@@ -1,5 +1,6 @@
 ---
 import BannerView from "../components/BannerView.astro";
+import LinksBlog from "../components/LinksSeo/LinksBlog.astro";
 import LinksBlogMulti from "../components/LinksSeo/LinksBlogMulti.astro";
 import Layout from "../layouts/Layout.astro";
 ---
@@ -13,9 +14,25 @@ import Layout from "../layouts/Layout.astro";
   <div id="LayoutView">
     <BannerView image="/images/DemoBanner.jpg" text="Sección de Blog" />
     <div id="ParentView">
-      <span>Bienvenido, encuentre lo que desea: </span>
-      <br /><br />
-      <LinksBlogMulti />
+      <span style="width:100%; text-align:center;">Bienvenido, encuentre lo que desea: </span>
+      <LinksBlog />
     </div>
   </div>
 </Layout>
+
+<style>
+  #ParentView {
+    display: flex;
+    justify-content: center;
+    justify-items: stretch;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 700px) {
+    #ParentView {
+      gap: 20px;
+    }
+  }
+</style>

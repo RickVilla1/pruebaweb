@@ -7,7 +7,6 @@ const { dir1, dir2 } = Astro.props;
 ---
 
 <div class="footer-content animate__animated animate__fadeInUp">
-  <div class="header-footer-divider extra-divider"></div>
   <footer>
     <div class="btn-footer"><a href={dir1[0]}><span>{dir1[1]}</span></a></div>
     <div class="divider"></div>
@@ -18,12 +17,16 @@ const { dir1, dir2 } = Astro.props;
 <style>
   .extra-divider {
     margin: 0;
-    opacity: 1;
+    opacity: 0;
   }
   .footer-content {
     position: fixed;
     bottom: 0px;
     width: 100%;
+    box-shadow: 0px 0px 5px 1px rgb(29, 29, 29);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
   }
 
   footer {

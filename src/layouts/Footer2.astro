@@ -1,0 +1,103 @@
+---
+interface Props {
+  dir1: Array<string>;
+  dir2: Array<string>;
+}
+const { dir1, dir2 } = Astro.props;
+---
+
+<div class="footer-content animate__animated animate__fadeInUp">
+  <footer>
+    <div class="btn-footer"><a href={dir1[0]}><span>{dir1[1]}</span></a></div>
+    <div class="divider"></div>
+    <div class="btn-footer"><a href={dir2[0]}><span>{dir2[1]}</span></a></div>
+  </footer>
+</div>
+
+<style>
+  .footer-content {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    box-shadow: 0px 0px 5px 1px rgb(29, 29, 29);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+    background-color: #590f7e;
+    font-family: "Roboto";
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+  }
+  .divider {
+    height: 30px;
+    width: 2px;
+    background-color: #d4d4d4;
+    border-radius: 50px;
+    box-shadow: 0px 0px 2px 0px rgb(0, 0, 0);
+  }
+
+  .btn-footer {
+    flex: 1;
+    height: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 0.25s ease-in-out;
+    user-select: none;
+  }
+
+  .btn-footer:hover {
+    background-color: rgb(114, 32, 155);
+  }
+
+  .btn-footer a {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    transition: all 0.25s ease-in-out;
+  }
+
+  .btn-footer a:hover {
+    color: #ffffff;
+  }
+
+  @media (pointer: fine) {
+    .btn-footer:hover {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  @media (pointer: coarse) or (max-width: 700px) {
+    .btn-footer {
+      height: 70px;
+      width: 100%;
+    }
+
+    .btn-footer a {
+      height: 100%;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 10px;
+    }
+
+    .divider {
+      width: 1px;
+      height: 22px;
+    }
+  }
+</style>

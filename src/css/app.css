@@ -1,41 +1,38 @@
+@import "animate.css/animate.min.css";
 @import url(./views.css);
-@import 'animate.css/animate.min.css';
+@import url(./link.css);
 
-:root{
-    --margin-bottom-items-links: 
+:root {
+  --margin-bottom-items-links: ;
 }
 
 * {
-    margin: 0px;
-    box-sizing: border-box;
-    padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 0px;
 }
 
-html{
-    font-family: helvetica, geneva, arial, sans-serif;
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-body{
-    overflow-x: hidden;
+html {
+  font-family: helvetica, geneva, arial, sans-serif;
 }
 
-.header-footer-divider {
-    height: 2px;
-    opacity: 0.6;
-    background-color: #9b9b9b;
-    margin-left: 40px;
-    margin-right: 40px;
-    border-radius: 20px;
-    box-shadow: 0px 0px 2px 0px rgb(0, 0, 0);
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; /* Chrome, Safari */
+  -moz-osx-font-smoothing: grayscale; /* Firefox */
 }
+
+.transform-gpu {
+    transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+}
+
 
 #ContentView {
-    margin-bottom: 150px;
-    --animate-duration: 1s;
+  margin-bottom: 150px;
+  --animate-duration: 1s;
 }
-
-
-
-
-
-

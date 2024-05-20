@@ -3,12 +3,12 @@ import Logo from "../svg/Logo.astro";
 ---
 
 <header class="animate__animated animate__fadeInDown">
-  <Logo />
+  <Logo FillColor="#fff" />
 </header>
 
 <style>
   header {
-    height: 70px;
+    height: 90px;
     justify-content: stretch;
     align-items: stretch;
     flex-direction: column;
@@ -16,6 +16,7 @@ import Logo from "../svg/Logo.astro";
     box-shadow: 0px 0px 5px 1px rgb(29, 29, 29);
     z-index: 5;
     position: relative;
+    background-color: #590f7e;
   }
   img {
     width: 100%;
@@ -23,9 +24,9 @@ import Logo from "../svg/Logo.astro";
     height: 200px;
   }
 
-  @media (min-width: 700px) {
+  @media (pointer: coars) or (max-width: 700px){
     header {
-      height: 90px;
+      height: 70px;
     }
   }
 </style>

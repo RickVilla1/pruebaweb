@@ -12,27 +12,10 @@ import Layout from "../layouts/Layout.astro";
   link2={["/ventas", "Comprar"]}
 >
   <div id="LayoutView">
-    <BannerView image="/images/DemoBanner.jpg" text="Sección de Blog" />
+    <BannerView image="/images/DemoBanner2.jpg" text="Sección de Blog" />
     <div id="ParentView">
-      <span style="width:100%; text-align:center;">Bienvenido, encuentre lo que desea: </span>
+      <span class="item-text-view">Bienvenido, encuentre lo que desea: </span>
       <LinksBlog />
     </div>
   </div>
 </Layout>
-
-<style>
-  #ParentView {
-    display: flex;
-    justify-content: center;
-    justify-items: stretch;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  @media (max-width: 700px) {
-    #ParentView {
-      gap: 20px;
-    }
-  }
-</style>

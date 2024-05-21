@@ -1,0 +1,106 @@
+---
+interface Props {
+  link?: string;
+  title: string;
+  img?: string;
+}
+
+const {
+  link = "SistemaCambios",
+  img = "/images/DemoBanner.jpg",
+  title,
+} = Astro.props;
+---
+
+<div class="item-card">
+  <div class="item-card-link">
+    <a onclick=`RouteManager.NavigateTo(${link})`>{title}</a><span
+      class="item-card-circle"
+      aria-hidden="true">👈</span
+    >
+  </div>
+  <img src={img} alt="" />
+</div>
+
+<style is:global>
+  .item-card {
+    border-radius: 10px;
+    max-width: 650px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .item-card img {
+    margin-top: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 220px;
+    max-width: 100%;
+    border-radius: 10px;
+    user-select: none;
+  }
+
+  .item-card-link {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: none;
+    padding: 0;
+    gap: 15px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .item-card-link a {
+    display: block;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    text-decoration: none;
+
+    color: #555555;
+    width: fit-content;
+    letter-spacing: -0.7px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.1s ease-in-out;
+  }
+
+  .item-card-link a:hover {
+    color: #070707;
+    text-decoration: underline;
+  }
+
+  .item-card-circle {
+    flex-shrink: 0;
+    font-size: 28px;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: #6f1d8a;
+    border-radius: 1.625rem;
+    line-height: 34px;
+  }
+
+  @media (pointer: fine) {
+    .item-card-link:hover .item-card-circle {
+      width: 60px;
+    }
+  }
+
+  @media (pointer: coarse) or (max-width: 700px) {
+    .item-card-circle {
+      font-size: 23px;
+      width: 45px;
+      height: 45px;
+    }
+    .item-card-link {
+      gap: 10px;
+    }
+  }
+</style>

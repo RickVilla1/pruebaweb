@@ -1,6 +1,6 @@
 class EurosPrecioDia {
     static buildView() {
-        const newContentView = /*html*/`<div id="ParentView">
+        const newContentView = /*html*/`<div id="ContentForm">
             <div>
                 <span>El precio del día es 4.04 Soles.</span><br><span>Díganos: ¿Desea </span><a>Comprar</a
                 ><span> o </span><a>Vender</a><span>?</span>

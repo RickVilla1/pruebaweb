@@ -1,14 +1,9 @@
-.titleView {
-  font-size: larger;
-  font-style: normal;
-  font-family: helvetica, geneva, arial, sans-serif;
-}
 
-#ParentView {
+#ContentForm {
   margin: 40px;
 }
 
-#ParentView span {
+#ContentForm span {
   font-family: helvetica, geneva, arial, sans-serif;
   font-size: 30px;
   line-height: 34px;
@@ -18,7 +13,7 @@
 }
 
 /* Estilos para todos los enlaces <a */
-#ParentView a {
+#ContentForm a {
   display: inline;
   color: #555555; /* Color del texto */
   text-decoration: none; /* Sin subrayado */
@@ -33,40 +28,27 @@
   transition: all 0.1s ease-in-out;
 }
 
-#ParentView a:hover {
+#ContentForm a:hover {
   color: #070707;
   text-decoration: underline; /* Subrayado al pasar el mouse */
 }
 
-#ParentView a:active {
-}
-
-#ParentView img {
-  display: block;
-  width: 500px;
-  height: 200px;
-  max-width: 100%;
-  margin-bottom: 30px;
-  margin-top: 8px;
-  border-radius: 10px;
-  user-select: none;
-}
 
 @media (max-width: 700px) {
 
-  #ParentView span {
+  #ContentForm {
+    margin: 20px;
+  }
+
+  #ContentForm span {
     font-size: 23px;
   }
   
-  #ParentView a {
+  #ContentForm a {
     font-size: 23px;
     text-decoration: underline; /* Sin subrayado */
   }
 
-  #ParentView {
-    margin: 20px;
-    gap: 20px;
-  }
   
 }
 

@@ -1,24 +1,20 @@
 ---
+import Card from "../CardItem2.astro";
+
+const items = [
+  { title: "Pastillas abortivas precio Perú" },
+  { title: "Pastilla abortiva Cytotec precio" },
+  { title: "¿Cuál es el precio de la pastilla abortiva?" },
+  { title: "Pastilla para abortar Cytotec precio" },
+  { title: "Pastilla para aborto humano precio" },
+  { title: "Pastillas abortivas Mercado Libre" },
+  { title: "Pastillas abortivas nombres y precios Perú" },
+  { title: "Pastillas abortivas para perros MercadoLibre" },
+  { title: "Pastillas para abortar en farmacias precio" },
+  { title: "Pastillas para el aborto precio" },
+  { title: "¿Es peligroso las pastillas abortivas?" },
+];
 ---
-<a onclick="RouteManager.NavigateTo(SistemaCambios)">Pastillas abortivas precio Perú<span>. </span></a>
-<img src="/images/DemoBanner.jpg" alt="">
-<a onclick="RouteManager.NavigateTo(SistemaCambios)">Pastilla abortiva Cytotec precio<span>. </span></a>
-<img src="/images/DemoBanner.jpg" alt="">
-<a onclick="RouteManager.NavigateTo(SistemaCambios)">¿Cuál es el precio de la pastilla abortiva? </a>
-<img src="/images/DemoBanner.jpg" alt="">
-<a onclick="RouteManager.NavigateTo(SistemaCambios)">Pastilla para abortar Cytotec precio<span>. </span></a>
-<img src="/images/DemoBanner.jpg" alt="">
-<a onclick="RouteManager.NavigateTo(SistemaCambios)">Pastilla para aborto humano precio<span>. </span></a>
-<img src="/images/DemoBanner.jpg" alt="">
-<a onclick="RouteManager.NavigateTo(SistemaCambios)">Pastillas abortivas Mercado Libre<span>. </span></a>
-<img src="/images/DemoBanner.jpg" alt="">
-<a onclick="RouteManager.NavigateTo(SistemaCambios)">Pastillas abortivas nombres y precios Perú<span>. </span></a>
-<img src="/images/DemoBanner.jpg" alt="">
-<a onclick="RouteManager.NavigateTo(SistemaCambios)">Pastillas abortivas para perros MercadoLibre<span>. </span></a>
-<img src="/images/DemoBanner.jpg" alt="">
-<a onclick="RouteManager.NavigateTo(SistemaCambios)">Pastillas para abortar en farmacias precio<span>. </span></a>
-<img src="/images/DemoBanner.jpg" alt="">
-<a onclick="RouteManager.NavigateTo(SistemaCambios)">Pastillas para el aborto precio<span>. </span></a>
-<img src="/images/DemoBanner.jpg" alt="">
-<a onclick="RouteManager.NavigateTo(SistemaCambios)">¿Es peligroso las pastillas abortivas?<span>. </span></a>
-<img src="/images/DemoBanner.jpg" alt="">
+
+
+{items.map((item) => <Card title={item.title} />)}

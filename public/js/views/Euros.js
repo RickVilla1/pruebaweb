@@ -1,7 +1,7 @@
 class Euros {
   static buildView() {
     const newContentView = /*html*/ `
-    <div id="ParentView">
+    <div id="ContentForm">
     <div>
         <span>¿Qué desea conocer? </span><a onclick="RouteManager.NavigateTo(EurosPrecioDia)">Precio del día</a
         ><span> o </span><a>Cambio del Mes</a>

@@ -1,6 +1,6 @@
 class Dolares {
     static buildView() {
-        const newContentView = /*html*/ `<div id="ParentView"> 
+        const newContentView = /*html*/ `<div id="ContentForm"> 
         <span>Operar con dólares:</span>
         <br>
     <div>

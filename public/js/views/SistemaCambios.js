@@ -1,6 +1,6 @@
 class SistemaCambios {
   static buildView() {
-    const newContentView = /* html*/ `<div id="ParentView"><div>
+    const newContentView = /* html*/ `<div id="ContentForm"><div>
         <span>Bienvenido: Desea operar con </span
         ><a onclick="RouteManager.NavigateTo(Dolares)"
             >Dólares</a

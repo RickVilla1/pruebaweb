@@ -20,15 +20,16 @@ interface Props {
   .banner-view-view {
     position: relative;
     width: 100%;
-    height: 180px; /* Puedes ajustar la altura según tus necesidades */
+    height: 280px;
     overflow: hidden;
+    transition: all 0.5s ease-in-out;
   }
 
   .banner-view-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.2) blur(2px) contrast(0.8);
+    filter: brightness(0.38) blur(2px) contrast(0.8);
   }
 
   .banner-view-text {
@@ -41,6 +42,12 @@ interface Props {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: rgb(255, 255, 255); /* El color del texto puede ajustarse según la imagen de fondo */
+    color: rgb(255, 255, 255);
+  }
+
+  @media (pointer: coarse) or (max-width: 700px) {
+    .banner-view-view {
+      height: 180px;
+    }
   }
 </style>

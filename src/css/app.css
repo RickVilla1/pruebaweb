@@ -1,6 +1,8 @@
 @import "animate.css/animate.min.css";
 @import url(./views.css);
 @import url(./link.css);
+@import url(./items.css);
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 :root {
   --margin-bottom-items-links: ;
@@ -33,6 +35,12 @@ body {
 
 
 #ContentView {
-  margin-bottom: 150px;
+  margin-bottom: 85px;
   --animate-duration: 1s;
+}
+
+@media (pointer: coarse) or (max-width: 700px) {
+  #ContentView {
+    margin-bottom: 70px;
+  }
 }

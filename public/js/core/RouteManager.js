@@ -15,24 +15,26 @@ import { Animator } from "./Animator.js"
         }
         
         const currentContentView = RouteManager.ContentApp.firstElementChild;
-        console.log(currentContentView)
-        console.log(classView)
+    
 
         const newContentViewObject = (typeof classView === 'string') ? window[classView].buildView() :classView.buildView()
 
         Animator.setOutElementAnimation(currentContentView)
-        Animator.setInElementAnimation(newContentViewObject)
-
+        const divContainer = document.createElement('div')
+        Animator.setInElementAnimation(divContainer)
+        
         currentContentView.addEventListener('transitionend', function (event) {
             if (event.propertyName === 'opacity' && this.style.opacity == '0') {
-                newContentViewObject.style.opacity = '0'
-                newContentViewObject.style.transform = 'translateX(-20px)'
                 RouteManager.ContentApp.innerHTML = ''
-                const divContainer = document.createElement('div')
+                
                 divContainer.append(newContentViewObject)
+                divContainer.style.opacity = '0'
+                divContainer.style.transform = 'translateY(35px)'
                 RouteManager.ContentApp.append(divContainer)
-                newContentViewObject.style.opacity = '1'
-                newContentViewObject.style.transform = 'translateX(0px)';
+                divContainer.offsetHeight; 
+                
+                divContainer.style.opacity = '1'
+                divContainer.style.transform = 'translateY(0px)';
                 if (history) {
                     ManagerHistory.pushState(classView.name);
                 }
@@ -41,7 +43,7 @@ import { Animator } from "./Animator.js"
         });
 
         currentContentView.style.opacity = '0'
-        currentContentView.style.transform = 'translateX(20px)'
+        //currentContentView.style.transform = 'translateX(20px)'
 
     }
 }

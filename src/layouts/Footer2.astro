@@ -6,11 +6,11 @@ interface Props {
 const { dir1, dir2 } = Astro.props;
 ---
 
-<div class="footer-content animate__animated  animate__fadeInUp">
+<div class="footer-content">
   <footer>
-    <div class="btn-footer"><a href={dir1[0]}><span>{dir1[1]}</span></a></div>
+    <div class="btn-footer"><a href={dir1[0]}><span class="animate__animated  animate__fadeInUp">{dir1[1]}</span></a></div>
     <div class="divider"></div>
-    <div class="btn-footer"><a href={dir2[0]}><span>{dir2[1]}</span></a></div>
+    <div class="btn-footer"><a href={dir2[0]}><span class="animate__animated  animate__fadeInUp">{dir2[1]}</span></a></div>
   </footer>
 </div>
 

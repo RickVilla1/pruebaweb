@@ -36,7 +36,10 @@ body {
 
 #ContentView {
   margin-bottom: 85px;
-  --animate-duration: 1s;
+  --animate-duration: 0.5s;
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.9s ease-in-out, transform 0.8s ease-in-out;
 }
 
 @media (pointer: coarse) or (max-width: 700px) {

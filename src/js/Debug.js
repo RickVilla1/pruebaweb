@@ -36,5 +36,3 @@ document.addEventListener("keydown", function (event) {
     DebugCore.toogleImage();
   }
 });
-
-

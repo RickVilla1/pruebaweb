@@ -20,7 +20,7 @@
   text-align: center;
 }
 
-@media (max-width: 700px) {
+@media (pointer: coarse) or (max-width: 700px) {
   #ParentView {
     gap: 20px;
     margin: 20px;

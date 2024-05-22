@@ -1,0 +1,81 @@
+---
+import IconImage from "../svg/IconImage.astro";
+import IconImageHide from "../svg/IconImageHide.astro";
+---
+
+<button id="StaticImgButton"
+  ><IconImage FillColor="#590f7e" /><IconImageHide
+    display="none"
+    FillColor="#590f7e"
+  /></button
+>
+
+<style>
+  button {
+    all: unset;
+    border-radius: 50px;
+    box-sizing: border-box !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 100px;
+    right: -100px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 1);
+    cursor: pointer;
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+  }
+
+  .button-in {
+    right: 10px;
+  }
+
+  button:hover {
+    border-color: rgb(116, 116, 116);
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  @media (pointer: fine) {
+    button {
+      transition: all 0.3s ease-in-out;
+    }
+    button:hover {
+      transform: translate(0px, -8px);
+    }
+  }
+
+  @media (pointer: coarse) or (max-width: 700px) {
+    button {
+      bottom: 75px;
+      height: 40px;
+      width: 40px;
+      padding: 8px;
+    }
+  }
+</style>
+
+<script>
+  import { DebugCore } from "../js/Debug";
+  const button = document.getElementById("StaticImgButton");
+
+  setInterval(() => {
+    button.classList.add("button-in");
+  }, 2);
+  
+  button.addEventListener("click", () => {
+    DebugCore.toogleImage();
+    Array.from(button.children).forEach((item) => {
+      if (item instanceof SVGElement) {
+        console.log("IS HTML ELMENT");
+        const displayCurrent = item.style.display;
+        item.style.display = displayCurrent == "none" ? "block" : "none";
+      }
+    });
+  });
+</script>

@@ -6,7 +6,7 @@ interface Props {
 const { dir1, dir2 } = Astro.props;
 ---
 
-<div class="footer-content animate__animated animate__fadeInUp">
+<div class="footer-content animate__animated  animate__fadeInUp">
   <footer>
     <div class="btn-footer"><a href={dir1[0]}><span>{dir1[1]}</span></a></div>
     <div class="divider"></div>
@@ -83,7 +83,7 @@ const { dir1, dir2 } = Astro.props;
 
   @media (pointer: coarse) or (max-width: 700px) {
     .btn-footer {
-      height: 70px;
+      height: 62px;
       width: 100%;
     }
 

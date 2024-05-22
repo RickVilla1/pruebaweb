@@ -1,22 +1,19 @@
 ---
 interface Props {
-    image: string;
-    text: string;
-  }
-  const { image, text } = Astro.props;
+  image: string;
+  text: string;
+}
+const { image, text } = Astro.props;
 ---
+
 <div class="banner-view-view">
-  <img
-    src={image}
-    alt="Banner Image"
-    class="banner-view-image"
-  />
+  <img src={image} alt="Banner Image" class="banner-view-image" />
   <div class="banner-view-text">
     <h1>{text}</h1>
   </div>
 </div>
 
-<style>
+<style is:global>
   .banner-view-view {
     position: relative;
     width: 100%;
@@ -30,10 +27,11 @@ interface Props {
     height: 100%;
     object-fit: cover;
     filter: brightness(0.38) blur(2px) contrast(0.8);
+    user-select: none;
   }
 
   .banner-view-text {
-    font-size: 20px;
+    font-size: 25px;
     width: 100%;
     padding-left: 60px;
     padding-right: 60px;
@@ -48,6 +46,9 @@ interface Props {
   @media (pointer: coarse) or (max-width: 700px) {
     .banner-view-view {
       height: 180px;
+    }
+    .banner-view-text {
+      font-size: 20px;
     }
   }
 </style>
